@@ -1,0 +1,67 @@
+<div class="popup-wrapper sharetrips_popup">
+    <form>
+        <h5 mat-dialog-title class="d-flex justify-content-between align-items-center">
+            <span class="titleText">Share Your Trips</span>
+            <button mat-icon-button [mat-dialog-close]="true" (click)="openDialog()">
+                <span class="material-icons"> close </span>
+            </button>
+        </h5>
+
+        <mat-dialog-content>
+            <h5 class="text-center">Share your trips by link or email</h5>
+            <h6 class="text-center">https://www.luxuryholidays.com.au/Z49</h6>
+            <hr class="my-4" style="border: 1px solid #f1f1f1;"/>
+            <form class="shareTrip-form">
+                <div class="row">
+                    <div class="col-sm-6">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label> 
+                          <i class="fa fa-user-o" ></i>
+                          Your Name
+                        </mat-label>
+                        <input matInput type="text">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                        <mat-form-field appearance="outline" color="primary" class="w-100">
+                            <mat-label>
+                              <i class="fa fa-envelope-o" ></i>
+                              Your Email <sup style="color: red;line-height: 0.5;position: relative;top: 3px;">*</sup>
+                            </mat-label>
+                            <input matInput type="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <mat-form-field appearance="outline" color="primary" class="w-100 mb-3">
+                            <mat-label> 
+                            <i class="fa fa-envelope-o" ></i>
+                            Recipient Email(s) <sup style="color: red;line-height: 0.5;position: relative;top: 3px;">*</sup>
+                            </mat-label>
+                            <input matInput type="text">
+                            <mat-hint>Enter one or more recipient email addresses separated by commas or spaces.</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <mat-form-field appearance="outline" color="primary" class="w-100 mb-3">
+                            <mat-label> 
+                                <i class="fa fa-commenting-o" ></i>
+                                Message
+                            </mat-label>
+                            <textarea matInput></textarea>
+                            <mat-hint>Enter your message or notes here to be included in the email.</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </mat-dialog-content>
+        <mat-dialog-actions class="pt-2">
+            <div class="btn-wrapper text-center w-100 py-2">
+                <button mat-raised-button color="primary" class="l-height-normal action_btn">Share Now</button>
+            </div>
+        </mat-dialog-actions>
+    </form>
+</div>

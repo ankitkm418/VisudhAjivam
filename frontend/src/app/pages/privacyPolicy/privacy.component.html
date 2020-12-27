@@ -1,0 +1,32 @@
+<main id="privacy-policy" class="page-middle">
+      <app-innerpagesbanner [innerBannerImage]="myData?.data.banner_image"></app-innerpagesbanner>
+      <section class="sec_padd">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="sec-title text-center">
+                          <h1 class="text-uppercase h2"><strong>{{title}}</strong></h1>
+                          <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                      </div>
+                     <!-------------Content --------------->
+                   
+                     <div class="row">
+                        <div class="col-12">
+                           <h3 class="text-center font-weight-medium my-3">
+                              {{myData?.data.heading}} 
+                           </h3>
+                           <hr>
+                           <h3 class="text-center font-weight-medium my-3">
+                              {{myData?.data.sub_heading}}
+                           </h3>
+                           <hr>
+                        <div class="content-wrapper" [innerHtml]="myData?.data.content">
+                        </div>      
+                     </div>
+                  </div>
+<!---End content-------->
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>

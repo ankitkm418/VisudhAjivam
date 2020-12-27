@@ -1,0 +1,30 @@
+<div class="holiday-rentals-form">
+    <form>
+        <div class="form-row filter-btn align-items-center" *ngIf="router != '/' && router != '/blog-list' && router != '/trip-detail'">
+            <div class="col">
+                <button mat-fab (click)="openDialog()">
+                    <img src="../../../assets/images/filter/filter-icon.png" alt="Icon" width="15" height="auto" />
+                </button>
+            </div>
+        </div>
+        <div class="form-row middle align-items-center">
+            <div class="col-10" *ngIf="router != '/blog-list' && router != '/trip-detail'">
+                <mat-form-field appearance="fill" color="primary" class="w-100">
+                    <mat-label>Search what are you Looking For .........</mat-label>
+                    <input matInput placeholder="What are you Looking For ......" value="">
+                  </mat-form-field>
+            </div>
+
+            <div class="col">
+                <div class="submit_btn">
+                    <button mat-raised-button class="w-100"><span class="material-icons"> search </span> Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-row results-wrap align-items-center" *ngIf="router != '/' && router != '/blog-list' && router != '/trip-detail'">
+            <div class="col search-results text-white">
+                <p class="mb-0 mr-2">12 Results</p><span class="material-icons"> cancel</span>
+            </div>
+        </div>
+    </form>
+</div>

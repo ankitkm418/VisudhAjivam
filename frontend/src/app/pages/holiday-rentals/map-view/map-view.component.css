@@ -1,0 +1,47 @@
+.change_rentals_view {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.change_rentals_view a {
+    font-size: 16px;
+    text-decoration: none;
+}
+:host /deep/ .change_rentals_view a span.mat-button-wrapper span.material-icons {
+    font-size: 30px;
+    transform: translateY(-2px);
+}
+:host /deep/ .change_rentals_view .list_view a span.mat-button-wrapper span.material-icons {
+    font-size: 35px;
+}
+:host /deep/ .change_rentals_view .map_view a span.mat-button-wrapper span.material-icons {
+    font-size: 25px;
+}
+.change_rentals_view li:not(.active) a {
+    color: #333;
+}
+.change_rentals_view li {
+    position: relative;
+}
+.change_rentals_view li:not(:first-child)::before {
+    content: "";
+    width: 1px;
+    height: calc(100% - 8px);
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+:host /deep/ .three-col-layout .accommodate-wrap .img-wrapper a {
+    padding-bottom: 70% !important;
+}
+
+.map_view_box {
+    background-color: #f1f1f1;
+    height: 100vh;
+}

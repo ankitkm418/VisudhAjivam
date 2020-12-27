@@ -1,0 +1,11 @@
+.action_btn {
+      font-size: 12px !important;
+      padding: 10px 20px !important;
+}
+.action_btn mat-icon {
+      font-size: 20px;
+      line-height: 1.2;
+}
+:host /deep/ .mat-form-field-outline-start, :host /deep/ .mat-form-field-outline-end {
+      border-radius: 0;
+}

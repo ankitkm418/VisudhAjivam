@@ -1,0 +1,92 @@
+.holiday-rentals-form {
+    background: rgba(61, 172, 213, 0.8);
+    padding: 20px;
+    border-radius: 100px;
+}
+:host /deep/ .holiday-rentals-form .mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+:host /deep/ .holiday-rentals-form .mat-form-field .mat-form-field-flex {
+    border-radius: 40px;
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+:host /deep/ .holiday-rentals-form .mat-form-field .mat-form-field-underline {
+    display: none;
+}
+:host /deep/ .holiday-rentals-form .mat-form-field label.mat-form-field-label,
+:host /deep/ .holiday-rentals-form .mat-form-field .mat-select-value,
+:host /deep/ .holiday-rentals-form .mat-form-field .mat-select-arrow {
+    color: inherit;
+}
+.submit_btn button {
+    height: 62px;
+    border-radius: 100px;
+    box-shadow: none !important;
+    background-color: #2d2d2d;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+}
+.holiday-rentals-form form {
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+}
+.holiday-rentals-form form .form-row {
+    flex-grow: 1;
+    padding: 0 5px;
+}
+.form-row.filter-btn {
+    max-width: 76px;
+}
+.filter-btn button {
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+.results-wrap {
+    max-width: 150px;
+}
+.search-results {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: flex-end;
+}
+.search-results span.material-icons {
+    cursor: pointer;
+}
+.search-results span.material-icons:hover {
+    color: #000;
+}
+
+@media (max-width: 1541.98px) {
+    .holiday-rentals-form {
+        border-radius: 0px;
+    }
+    .holiday-rentals-form form .filter-btn {
+        order: 1;
+    }
+    .holiday-rentals-form form .results-wrap {
+        order: 2;
+    }
+    .holiday-rentals-form form .middle {
+        order: 3;
+        padding-top: 15px;
+    }
+    .holiday-rentals-form form {
+        justify-content: space-between;
+    }
+}
+@media (max-width: 1199.98px) {
+    .holiday-rentals-form .middle > .col {
+        min-width: 250px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 767.98px) {
+    .submit_btn button {
+        height: 54px;
+       
+    }
+}

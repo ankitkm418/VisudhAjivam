@@ -1,0 +1,160 @@
+<main id="homepage" class="page-middle">
+    <section class="home-banner" style="background-image: url('../../../assets/visu/home_banner.webp');">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-wrapper">
+                        <div class="banner-caption text-center">
+                            <img src="../../../assets/images/favicon.ico" width="75" height="75" class="img-fluid" alt="Luxury Holidays Australia" />
+                            <h3><strong>Search Your Service Provider</strong></h3>
+                            <p>Discover the best doctors, clinic & hospital the city nearest to you.</p>
+                        </div>
+                        <app-formholidayrentals></app-formholidayrentals>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <section class="joint-sections" style="background-image: url('../../../assets/images/homepage/two-sec-bg-1.png');">
+        <div class="about_sec sec_padd">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content-wrapper">
+                            <div class="row">
+                                <div class="col-12 col-lg-5 pt-3 mb-4">
+                                    <div class="sec-title text-center text-lg-left">
+                                        <h2 class="text-uppercase"><strong>Our Vision</strong></h2>
+                                        <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                                    </div>
+                                    <p class="mb-4 text-center text-lg-left">To revolutionise the Healthcare sector through this healthtech platform so that each and every citizen of India can get the best medical needs at there allowing budget.So that no one looses their lives just because of few bugs.We are making a family to save our public from the scarcity of services which is forced by their budget parameters.We are fastest, safest and cheapest one stop solution for your medical facilities.We value your lives,ur needs and ur money.We want to be your health guide as well as health care service provider.</p>
+                                    <div class="btn-wrapper text-center text-lg-left">
+                                        <button routerLink="/about" mat-raised-button color="primary" class="l-height-normal">Read More</button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    <div class="img-wrapper text-center">
+                                        <img src="../../../assets/visu/vision.jpg" width="auto" height="auto" alt="Luxury Holidays Australia" class="img-fluid" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------------Our Mission------------------------------------------------>
+        <div class="about_sec sec_padd">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content-wrapper">
+                            <div class="row">
+                                <div class="col-12 col-lg-5 pt-3 mb-4">
+                                    <div class="sec-title text-center text-lg-left">
+                                        <h2 class="text-uppercase"><strong>Our Mission</strong></h2>
+                                        <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                                    </div>
+                                    <p class="mb-4 text-center text-lg-left">Visudh AJIVAM PVT LTD is on a mission to take hand in hand with public and help them across their medical needs with making the user friendly digital platform without any Hassel at right time right place and most important at affordable price making the standard of one of the best world class service provider in terms of e-pharma as well as e-consultancy sector across the country.
+                                    </p>
+                                    <div class="btn-wrapper text-center text-lg-left">
+                                        <button routerLink="/about" mat-raised-button color="primary" class="l-height-normal">Read More</button>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    <div class="img-wrapper text-center">
+                                        <img src="../../../assets/visu/mission.png" width="auto" height="auto" alt="Luxury Holidays Australia" class="img-fluid" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------------Our Mission------------------->
+        <div class="featured_accommodations sec_padd pb-0">
+            <div class="container-xxxxxxxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sec-title text-center">
+                            <h2 class="text-uppercase"><strong>Our Services</strong></h2>
+                            <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        >
+                            <div ngxSlickItem *ngFor="let accommodation of accommodations" class="slide">
+                                <app-accommodation-cards 
+                                [image]="accommodation.image"
+                                [title]="accommodation.title"
+                                ></app-accommodation-cards>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="btn-wrapper text-center pt-5">
+                            <button mat-raised-button color="primary" class="l-height-normal">View All Doctors</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="find_best_accommodate sec_padd">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sec-title text-center">
+                        <h2 class="text-uppercase"><strong>FIND THE BEST DOCTORS & MEDICINES NEAR YOU</strong></h2>
+                        <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                    </div>
+                    <h3 class="text-uppercase text-center">Find The Best</h3>
+                    <h5 class="text-center">Visudh Ajivam helps you to choose the best Doctors and Medicines in your near area.</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-signup-newsletter></app-signup-newsletter>
+    <section class="sec_padd">
+        <div class="container-xxxxxxxl">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sec-title text-center">
+                        <h2 class="text-uppercase"><strong>Our Doctors</strong></h2>
+                        <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ngx-slick-carousel class="carousel" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig2" 
+                    >
+                        <div ngxSlickItem *ngFor="let location of locations | slice:0:4" class="slide">
+                            <app-our-locations
+                                [image]="location.image"
+                                [title]="location.title"
+                            ></app-our-locations>
+                        </div>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="btn-wrapper text-center pt-5">
+                        <button routerLink="/locations" mat-raised-button color="primary" class="l-height-normal">View All Doctors</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>    
+</main>

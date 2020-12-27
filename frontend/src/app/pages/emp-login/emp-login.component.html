@@ -1,0 +1,59 @@
+<main id="login" class="page-middle" style="background-image: url(../../../assets/images/loginpage/Login_bg_img.jpg);">
+  <div class="container-xxxxl">
+    <div class="row">
+      <div class="col-12">
+        <div class="login-wrap">
+          <div class="login-box">
+            <a class="navbar-brand" [routerLink]="['']" [routerLinkActive]="['is-active']" title="Luxury Holidays Australia">
+             <span><b> EMPLOYEE LOGIN</b></span>
+            </a>
+            <div class="login-form">
+              <form [formGroup]="formGroup" (ngSubmit)="login()">
+                <div class="field-wrap">
+                  <label class="custom_label text-uppercase">Username or email address *</label>
+                  <mat-form-field appearance="outline" color="primary" class="w-100">
+                    <mat-label> 
+                      <i class="fa fa-user-o"></i>
+                      Enter username or email
+                    </mat-label>
+                    <input matInput formControlName="email" type="email">
+                  </mat-form-field>
+                </div>
+                <div class="field-wrap">
+                  <label class="custom_label text-uppercase">Password *</label>
+                  <mat-form-field appearance="outline" color="primary" class="w-100">
+                    <mat-label> 
+                      <i class="fa fa-unlock"></i>
+                      Enter your password
+                    </mat-label>
+                    <input matInput type="password" formControlName="password">
+                  </mat-form-field>
+                </div>
+                <div class="btn-wrapper text-center">
+                    <button id="login-btn" mat-raised-button color="primary" class="l-height-normal">Login</button>
+                </div>
+              </form>
+              <div class="btn-wrapper text-center request_password">
+                  <a mat-button href="" target="_blank" style="text-decoration: underline;">Request New Password</a>
+              </div>
+              <div class="btn-wrapper text-center request_password">
+               Don't have an account yet? <a mat-button routerLink="/emp-registration" style="text-decoration: underline;">Create an Account</a>
+            </div>
+              <div class="social_follow">
+                <a mat-stroked-button color="primary" href="" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a mat-stroked-button color="primary" href="" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a mat-stroked-button color="primary" href="" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

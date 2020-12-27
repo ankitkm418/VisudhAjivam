@@ -1,0 +1,443 @@
+<main id="login" class="page-middle" style="background-image: url(../../../assets/images/loginpage/Login_bg_img.jpg);">
+      <div class="container-xxxxl">
+            <div class="row">
+                  <div class="col-12">
+                        <div class="login-wrap">
+                              <div class="login-box">
+                                    <a class="navbar-brand" [routerLink]="['']" [routerLinkActive]="['is-active']"
+                                          title="Luxury Holidays Australia">
+                                          <span><b> Business Registration</b></span>
+                                          <!-- <img src="assets/images/logo.png" alt="Luxury Holidays Australia" width="156px" height="62px" /> -->
+                                    </a>
+                                    <div class="login-form">
+                                          <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Full Name *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="fullName">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['fullName'].invalid">
+                                                                        {{getError('fullName')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        DOB *
+                                                                  </mat-label>
+                                                                  <input matInput type="date" formControlName="dob">
+                                                                  <mat-error *ngIf="formGroup.controls['dob'].invalid">
+                                                                        {{getError('dob')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Sex *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="sex">
+                                                                  <mat-error *ngIf="formGroup.controls['sex'].invalid">
+                                                                        {{getError('sex')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-phone"></i>
+                                                                        Aadhar No *
+                                                                  </mat-label>
+                                                                  <input matInput type="number"
+                                                                        formControlName="aadhar">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['aadhar'].invalid">
+                                                                        {{getError('aadhar')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-phone-alt"></i>
+                                                                        Phone Number*
+                                                                  </mat-label>
+                                                                  <input matInput type="number"
+                                                                        formControlName="phone_number"
+                                                                        pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.get('phone_number').hasError('required')">
+                                                                        Phone number is required
+                                                                  </mat-error>
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.get('phone_number').hasError('pattern')">
+                                                                        Please enter a valid Phone number
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-phone-alt"></i>
+                                                                        Pan Number*
+                                                                  </mat-label>
+                                                                  <input matInput type="number" formControlName="pan"
+                                                                        pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.get('pan').hasError('required')">
+                                                                        Pan number is required
+                                                                  </mat-error>
+                                                                  <!-- <mat-error *ngIf="formGroup.get('pan').hasError('pattern')">Please enter a valid Phone number
+                                    </mat-error> -->
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Qualification *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="qualification">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['qualification'].invalid">
+                                                                        {{getError('qualification')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Document *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="doc">
+                                                                  <mat-error *ngIf="formGroup.controls['doc'].invalid">
+                                                                        {{getError('doc')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Job Experience *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="job">
+                                                                  <mat-error *ngIf="formGroup.controls['job'].invalid">
+                                                                        {{getError('job')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Father Name *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="father">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['father'].invalid">
+                                                                        {{getError('father')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Motther Name *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="mother">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['mother'].invalid">
+                                                                        {{getError('mother')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <h6>Enter your Address details below:-</h6>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Address *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="address">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['address'].invalid">
+                                                                        {{getError('address')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        City *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="city">
+                                                                  <mat-error *ngIf="formGroup.controls['city'].invalid">
+                                                                        {{getError('city')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        District *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="district">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['district'].invalid">
+                                                                        {{getError('district')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        State *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="state">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['state'].invalid">
+                                                                        {{getError('state')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Pincode *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="pin">
+                                                                  <mat-error *ngIf="formGroup.controls['pin'].invalid">
+                                                                        {{getError('pin')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Country *
+                                                                  </mat-label>
+                                                                  <input matInput type="text" formControlName="country">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['country'].invalid">
+                                                                        {{getError('country')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <h6>Enter your Business details below:-</h6>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Business Registration No *
+                                                                  </mat-label>
+                                                                  <input matInput type="number" formControlName="business">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['business'].invalid">
+                                                                        {{getError('business')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        Business License *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="license">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['license'].invalid">
+                                                                        {{getError('license')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        GST No *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="gst">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['gst'].invalid">
+                                                                        {{getError('gst')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Document *
+                                                                  </mat-label>
+                                                                  <input matInput type="number" formControlName="document">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['document'].invalid">
+                                                                        {{getError('document')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        Business Photo *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="photo">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['photo'].invalid">
+                                                                        {{getError('photo')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        Official No *
+                                                                  </mat-label>
+                                                                  <input matInput type="text"
+                                                                        formControlName="official">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['official'].invalid">
+                                                                        {{getError('official')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <h6>Enter your Accounts details below:-</h6>
+                                                <div class="row">
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-user-o"></i>
+                                                                        Email *
+                                                                  </mat-label>
+                                                                  <input matInput type="email" formControlName="email">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['email'].invalid">
+                                                                        {{getError('email')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        Password *
+                                                                  </mat-label>
+                                                                  <input matInput type="password"
+                                                                        formControlName="password">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['password'].invalid">
+                                                                        {{getError('password')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                            <mat-form-field appearance="outline" color="primary"
+                                                                  class="w-100">
+                                                                  <mat-label>
+                                                                        <i class="fa fa-lock"></i>
+                                                                        Confirm Password *
+                                                                  </mat-label>
+                                                                  <input matInput type="password"
+                                                                        formControlName="password2">
+                                                                  <mat-error
+                                                                        *ngIf="formGroup.controls['password2'].invalid">
+                                                                        {{getError('password2')}}
+                                                                  </mat-error>
+                                                            </mat-form-field>
+                                                      </div>
+                                                </div>
+                                                <div class="row">
+                                                      <div class="col-sm-12">
+                                                            <div class="btn-wrapper text-center submit_btn">
+                                                                  <button mat-raised-button color="primary"
+                                                                        class="l-height-normal">Submit</button>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </form>
+
+                                          <div class="btn-wrapper text-center request_password">
+                                                Already have an account ? <a mat-button routerLink="/business-login"
+                                                      style="text-decoration: underline;">Login to your account</a>
+                                          </div>
+                                          <div class="social_follow">
+                                                <a mat-stroked-button color="primary" href="" target="_blank">
+                                                      <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                                <a mat-stroked-button color="primary" href="" target="_blank">
+                                                      <i class="fa fa-twitter"></i>
+                                                </a>
+                                                <a mat-stroked-button color="primary" href="" target="_blank">
+                                                      <i class="fab fa-instagram"></i>
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</main>

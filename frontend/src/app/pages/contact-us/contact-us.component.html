@@ -1,0 +1,159 @@
+<main id="contact" class="page-middle">
+  <app-innerpagesbanner [innerBannerImage]="bannerImage"></app-innerpagesbanner>
+  <section class="sec_padd contact_middle">
+    <div class="top-part" style="background-image: url(../../../assets/images/contactpage/contact-us-form-bg.png);">
+      <div class="container-xxxxl">
+        <div class="row">
+          <div class="col-12">
+            <div class="sec-title text-center">
+              <h1 class="text-uppercase h2"><strong>{{pageTitle}}</strong></h1>
+              <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20"
+                  alt="Icon" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="contact_form row">
+              <div class="left_content col-xl-8">
+                <h3 class="title_box">
+                  ENQUIRY TODAY ABOUT YOUR NEEDS
+                </h3>
+                <!-- <p class="desc_box" [innerHTML]="myData?.data.section1_content"></p> -->
+                <h6 class="company-tags"> ACN 149 722 109 or ABN 72 149 722 109 </h6>
+                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label> 
+                          <i class="fa fa-user-o" ></i>
+                          First Name*
+                        </mat-label>
+                        <input matInput type="text" formControlName="first_name">
+                        <mat-error *ngIf="formGroup.controls['first_name'].invalid">
+                          {{getError('first_name')}}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label> 
+                          <i class="fa fa-user-o" ></i>
+                          Last Name* 
+                        </mat-label>
+                        <input matInput type="text" formControlName="last_name">
+                        <mat-error *ngIf="formGroup.controls['last_name'].invalid">
+                          {{getError('last_name')}}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label>
+                          <i class="fa fa-envelope-o" ></i>
+                          Email*
+                        </mat-label>
+                        <input matInput type="email" formControlName="email"
+                          pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+                        <mat-error *ngIf="formGroup.get('email').hasError('required')">Email is required</mat-error>
+                        <mat-error *ngIf="formGroup.get('email').hasError('pattern')">Please enter a valid email address
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label> 
+                          <i class="fa fa-phone-alt" ></i>
+                          Phone Number*
+                        </mat-label>
+                        <input matInput type="number" formControlName="phone_number" pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                        <mat-error *ngIf="formGroup.get('phone_number').hasError('required')">Phone number is required
+                        </mat-error>
+                        <mat-error *ngIf="formGroup.get('phone_number').hasError('pattern')">Please enter a valid Phone number
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <mat-form-field appearance="outline" color="primary" class="w-100">
+                        <mat-label> 
+                          <i class="fa fa-commenting-o" ></i>
+                          Message / Comments*
+                        </mat-label>
+                        <!-- <input matInput type="text" formControlName="comment"> -->
+                        <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="5"
+                        cdkAutosizeMaxRows="5" 
+                        formControlName="comment"></textarea>
+                        <mat-error *ngIf="!formGroup.controls['comment'].valid">
+                          {{getError('comment')}}
+                        </mat-error>
+                      </mat-form-field>
+      
+                      <mat-checkbox color="primary" formControlName="signup_updates">
+                        Sign up for updates (Signup to receive news and special offers.)
+                      </mat-checkbox>  
+
+                      <div class="btn-wrapper submit_btn">
+                        <button mat-raised-button color="primary" class="l-height-normal" [disabled]="!formGroup.valid">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="right_info col-xl-4">
+                <div class="icon_wrap">
+                  <!-- <img src="../../../assets/visu/logo.jpeg" width="75" height="75" class="img-fluid" alt="Luxury Holidays Australia" /> -->
+                </div>
+                <aside>
+                  <div class="media">
+                    <div class="info_icon">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <div class="media-body">
+                      <h5 class="mt-0">Locate Us:</h5>
+                      <p class="list_description">Surya nagar road no-3 Bijulia talab road ward no -8 Ramgarh canttRamgarh Jharkhand 829122</p>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="info_icon">
+                      <i class="fa fa-phone-alt"></i>
+                    </div>
+                    <div class="media-body">
+                      <h5 class="mt-0">Contact:</h5>
+                      <a href="tel:+91-9304970109" class="list_description">+91-9304970109</a>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <!-- <div class="info_icon">
+                      <i class="fa fa-phone-alt"></i>
+                    </div> -->
+                    <!-- <div class="media-body">
+                      <h5 class="mt-0">From Outside Australia:</h5>
+                      <a href="{{'tel:' + myData1?.data.phone_outside }}" class="list_description">{{myData1?.data.phone_outside}}</a>
+                    </div> -->
+                  </div>
+                  <div class="media">
+                    <div class="info_icon">
+                      <i class="fa fa-envelope-o"></i>
+                    </div>
+                    <div class="media-body">
+                      <h5 class="mt-0">Email Us:</h5>
+                      <a href="mailto: vishudhajivam@gmail.com" class="list_description">vishudhajivam@gmail.com</a>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-signup-newsletter></app-signup-newsletter>
+</main>

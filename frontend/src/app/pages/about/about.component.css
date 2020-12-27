@@ -1,0 +1,30 @@
+.about_description .container {
+    max-width: 1180px;
+}
+.about_description .content-wrapper h3 {
+    font-weight: 600;
+}
+.about_description {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center top;
+}
+.about_description .btm-part .bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 95%;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 1200px) {
+    .about_description .content-wrapper h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .about_description .btm-part .bg-img {
+        padding-bottom: 75%;
+    }
+}

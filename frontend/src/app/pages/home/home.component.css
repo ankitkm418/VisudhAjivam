@@ -1,0 +1,108 @@
+section.home-banner .container-xl {
+    max-width: 1520px;
+}
+section.home-banner {
+    height: calc(100vh - 90px);
+    max-height: 980px;
+    padding: 50px 0px 0px;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+section.home-banner .banner-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+section.home-banner .banner-caption h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+section.home-banner .banner-caption p {
+    color: #515151;
+}
+section.joint-sections {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center 100%;
+}
+.about_sec .content-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+.about_sec .content-wrapper::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.find_best_accommodate .container {
+    max-width: 1100px;
+}
+.find_best_accommodate h3 {
+    letter-spacing: 14px;
+    color: #f3f3f3;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 0.4;
+}
+.find_best_accommodate h5 {
+    font-style: italic;
+    color: #323333;
+    font-weight: 400;
+    margin-top: -35px;
+    line-height: 1.5;
+}
+
+
+
+@media (min-width: 992px) {
+    .about_sec .content-wrapper {
+        padding: 40px;
+        padding-right: 0;
+    }
+    .about_sec .content-wrapper::before {
+        width: calc(100% - 150px);
+    }
+}
+@media (max-width: 1199.98px) {
+    section.home-banner {
+        height: auto;
+    }
+    .find_best_accommodate .container {
+        max-width: 768px;
+    }
+    .find_best_accommodate h3 {
+        font-size: 60px;
+    }
+    .find_best_accommodate h5 {
+        font-size: 16px;
+        margin-top: -20px;
+    }
+}
+@media (max-width: 767.98px) {
+    .find_best_accommodate h3 {
+        font-size: 40px;
+        line-height: normal;
+    }
+    .find_best_accommodate h5 {
+        font-size: 16px;
+        margin-top: 0px;
+    }
+}
+@media (max-width: 575.98px) {
+    .find_best_accommodate h3 {
+        font-size: 30px;
+        letter-spacing: 7px;
+    }
+}

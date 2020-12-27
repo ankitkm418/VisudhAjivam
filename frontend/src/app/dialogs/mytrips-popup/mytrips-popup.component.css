@@ -1,0 +1,68 @@
+table.mytrip_table button:not(.remove_trip) {
+      font-size: 12px;
+      padding: 10px 15px;
+      margin: 5px;
+      width: 100%;
+}
+table.mytrip_table button.book_btn {
+      max-width: 100%;
+}
+table.mytrip_table .btn-wrapper {
+      display: flex;
+      display: -ms-flexbox;
+      align-items: center;
+}
+table.mytrip_table button.remove_trip {
+      background-color: #d82222;
+      color: #fff;
+}
+table.mytrip_table {
+      width: 100%;
+}
+.action_btn {
+      font-size: 12px !important;
+      padding: 10px 20px !important;
+}
+.action_btn mat-icon {
+      font-size: 20px;
+      line-height: 1.2;
+}
+table.mytrip_table tr {
+      border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 991.98px) {
+      table.mytrip_table tr {
+            display: flex;
+            display: -ms-flexbox;
+            flex-direction: column;
+            position: relative;
+      }
+      table.mytrip_table tr td.btn-wrapper-remove {
+            position: absolute;
+            right: 0px;
+            bottom: 90px;
+      }
+      table.mytrip_table tr td.btn-wrapper-remove .btn-wrapper .remove_trip {
+            width: 30px;
+            height: 30px;
+      }
+      table.mytrip_table tr td.btn-wrapper-remove .btn-wrapper .remove_trip mat-icon {
+            font-size: 16px;
+            line-height: 1.4;
+      }
+      :host /deep/ table.mytrip_table tr td.btn-wrapper-remove .btn-wrapper .remove_trip span.mat-button-wrapper {
+            padding: 0;
+      }
+      table.mytrip_table td.img-wrap img {
+            width: 100%;
+      }
+}
+@media (max-width: 575.98px) {
+      table.mytrip_table .btn-wrapper {
+            flex-direction: column;
+      }
+      table.mytrip_table tr td.btn-wrapper-remove {
+            bottom: 135px;
+      }        
+}

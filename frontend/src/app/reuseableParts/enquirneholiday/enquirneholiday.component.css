@@ -1,0 +1,42 @@
+.enquire-holiday .container {
+    max-width: 991px;
+}
+.enquire-holiday {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+/* .enquire-holiday::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 171, 213, 0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+} */
+.enquire-holiday .description {
+    line-height: 1.8;
+    font-weight: 300;
+}
+:host /deep/ .mat-form-field .mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+:host /deep/ .mat-form-field .mat-form-field-flex {
+    border-radius: 40px;
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+:host /deep/ .mat-form-field .mat-form-field-underline {
+    display: none;
+}
+:host /deep/ .mat-form-field label.mat-form-field-label,
+:host /deep/ .mat-form-field .mat-select-value,
+:host /deep/ .mat-form-field .mat-select-arrow {
+    color: inherit;
+}
+.subscribe-form {
+    max-width: 700px;
+    margin: auto;
+}

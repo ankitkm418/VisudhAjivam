@@ -1,0 +1,68 @@
+.locations-listing {
+    padding: 0 6px;
+}
+.locations-wrap {
+    box-shadow: none !important;
+    background: #fff;
+    margin-bottom: 15px;
+    position: relative;
+}
+.locations-wrap .content-wrap {
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.locations-wrap .img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.locations-wrap .img-wrapper a {
+    display: block;
+    padding-bottom: 90%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.1s linear; 
+    position: relative;
+}
+.locations-wrap .img-wrapper a::after {
+    content: "";
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0%));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.locations-wrap .img-wrapper:hover a {
+    transform: scale(1.05);
+}
+.locations-wrap .content-wrap .title {
+    margin-bottom: 0;
+}
+.locations-wrap .content-wrap .title a {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    overflow: hidden;
+    display: block;
+}
+.locations-wrap .content-wrap .title a:hover {
+    text-decoration: none;
+}
+:host /deep/ .locations-wrap .content-wrap .title a:hover .mat-button-focus-overlay {
+    opacity: 0 !important;
+}
+
+
+@media (max-width: 991.98px) {
+    .locations-wrap .content-wrap .title a {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}
