@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyService } from 'src/app/myService.service';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,5 @@ export class AppComponent  {
   //     this.spinner.hide();
   //   }, 5000);
   // }
+  constructor(public service : MyService) {}
 }

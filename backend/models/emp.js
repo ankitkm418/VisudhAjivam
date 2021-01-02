@@ -80,6 +80,9 @@ const empSchema=mongoose.Schema({
     token:{
         type: String
     }
+},
+{
+  timestamps: true
 });
 
 

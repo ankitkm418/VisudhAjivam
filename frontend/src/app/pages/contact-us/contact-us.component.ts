@@ -68,8 +68,6 @@ export class ContactUsComponent implements OnInit {
   this.pageTitle = 'contact us';   
    this.createForm();
 
-  this.service.getContact().subscribe(data => this.myData = data);
-  this.service.getContDetails().subscribe(data => this.myData1 = data)
   }
 
   onSubmit(){

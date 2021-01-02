@@ -11,7 +11,6 @@ export class SocialListComponent implements OnInit {
   constructor(private service : MyService) { }
 
   ngOnInit(): void {
-    this.service.getContDetails().subscribe(data =>this.myData = data)
   }
 
 }

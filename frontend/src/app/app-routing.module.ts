@@ -12,8 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { HolidayRentalsComponent } from './pages/holiday-rentals/holiday-rentals.component';
 import { ConsumerSignupComponent } from './pages/consumer-signup/consumer-signup.component';
+import { UniqueCardComponent } from './header/card.component';
 
 
 const routes: Routes = [
@@ -25,27 +25,15 @@ const routes: Routes = [
     path: 'about', 
     component: AboutComponent,
   },
-  // { 
-  //   path: 'testimonials',
-  //   component: TestimonialsComponent,
-  // },
+  { 
+    path: 'unique-card', 
+    component: UniqueCardComponent,
+  },
   
   { 
     path: 'book-tests', 
     component: NotfoundComponent 
   },
-  // {
-  //   path : 'blog',
-  //   component : BlogListComponent
-  // },
-  // {
-  //   path : 'blog/details/:id',
-  //   component : BlogDetailsComponent
-  // },
-  // {
-  //   path : 'blog-categories/:id',
-  //   component : BCategoryComponent
-  // },
   {
     path : 'login',
     component : LoginComponent
@@ -66,14 +54,6 @@ const routes: Routes = [
     path : 'contact-us',
     component : ContactUsComponent
   },
-  // {
-  //   path: 'trip-detail',
-  //   component : TripDetailComponent
-  // },
-  // {
-  //   path:'buy-medicines',
-  //   component : HamiltonIslandComponent
-  // },
   { 
     path: 'visit-doctor', 
     component: NotfoundComponent 
@@ -90,26 +70,6 @@ const routes: Routes = [
     path: 'emp-login', 
     component: EmpLoginComponent 
   },
-  // {
-  //   path:'split-view',
-  //   component : SplitViewComponent
-  // },
-  // {
-  //   path:'map-view',
-  //   component : MapViewComponent
-  // },
-  // {
-  //   path:'terms-condition',
-  //   component : TermsComponent
-  // },
-  // {
-  //   path:'policies',
-  //   component : PrivacyComponent
-  // },
-  // {
-  //   path:'sitemap',
-  //   component : SitemapComponent
-  // },
   { 
     path: '**',
     component: NotfoundComponent 

@@ -28,9 +28,21 @@ export class EmpLoginComponent implements OnInit {
     }
   
     login(){
-      this.service.eLogin(this.formGroup.value)
-      this.formGroup.reset()
-      this.router.navigate(['/'])
+      if(this.formGroup.valid)
+      this.service.eLogin(this.formGroup.value).subscribe((res:any)=>{
+        localStorage.setItem('email', res.email)
+        localStorage.setItem('access_token', res.token)
+        localStorage.setItem('id', res.id)
+        localStorage.setItem('ref', 'Employee')
+        
+        this.formGroup.reset()
+      
+       
+      this.router.navigate(['/']) 
+        //window.location.reload();
+       
+  
+      })
     }
   
   

@@ -1,7 +1,6 @@
 import { MyService } from 'src/app/myService.service';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MytripsPopupComponent } from '../dialogs/mytrips-popup/mytrips-popup.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +10,10 @@ import { MytripsPopupComponent } from '../dialogs/mytrips-popup/mytrips-popup.co
 export class HeaderComponent implements OnInit {
   myData;
   loginData;
-  constructor(public dialog: MatDialog, private service : MyService) {}
-
-  openDialog() {
-    this.dialog.open(MytripsPopupComponent, {
-      width: '800px',
-    });
-  }
+  
+ @Input() loggedIn; 
+  
+  constructor(public service : MyService, private router : Router) {}
 
 
   status1: boolean = false;
@@ -43,21 +39,29 @@ export class HeaderComponent implements OnInit {
   public screenWidth: any;  
 
   ngOnInit(): void {
+    
+    
     this.screenWidth = window.innerWidth;
-  
-    this.service.getContDetails().subscribe(data =>this.myData = data)
+   
+    //this.service.getContDetails().subscribe(data =>this.myData = data)
 
-    this.loginData = this.service.getAccessToken()
+   
    
   }
 
   logout(){
-   this.service.logout().subscribe(res=>{
-    console.log(res)
+   this.service.logout()
+  
+   //.subscribe(res=>{
+    //console.log(res)
     alert('Successfully Logout')
-   })
-  }
-
+  
+    //window.location.reload();
+    this.router.navigate(['/'])
+    
+   }
+  
+ 
 
 
   

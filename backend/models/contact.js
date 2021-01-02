@@ -20,6 +20,9 @@ const contactSchema=mongoose.Schema({
     signup_updates:{
         type: Boolean
     },
+},
+{
+  timestamps: true
 });
 
 

@@ -122,39 +122,4 @@
             </div>
         </div>
     </section>
-    <app-signup-newsletter></app-signup-newsletter>
-    <section class="sec_padd">
-        <div class="container-xxxxxxxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="sec-title text-center">
-                        <h2 class="text-uppercase"><strong>Our Doctors</strong></h2>
-                        <div class="title_shape_bottom"><img src="../../../assets/images/favicon.ico" width="20" height="20" alt="Icon" /></div>
-                    </div> 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <ngx-slick-carousel class="carousel" 
-                    #slickModal="slick-carousel" 
-                    [config]="slideConfig2" 
-                    >
-                        <div ngxSlickItem *ngFor="let location of locations | slice:0:4" class="slide">
-                            <app-our-locations
-                                [image]="location.image"
-                                [title]="location.title"
-                            ></app-our-locations>
-                        </div>
-                    </ngx-slick-carousel>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="btn-wrapper text-center pt-5">
-                        <button routerLink="/locations" mat-raised-button color="primary" class="l-height-normal">View All Doctors</button>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </section>    
 </main>

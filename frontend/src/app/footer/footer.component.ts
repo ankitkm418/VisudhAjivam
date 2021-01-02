@@ -24,7 +24,6 @@ myData;
   ];
 
   ngOnInit(): void {
-    this.service.getFooter().subscribe(data => this.myData = data)
   }
 
 }

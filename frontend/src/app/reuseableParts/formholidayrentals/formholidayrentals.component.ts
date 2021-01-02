@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import { FilterPopupComponent } from 'src/app/dialogs/filter-popup/filter-popup.component';
 import { Router } from '@angular/router';
 
 interface Location {
@@ -27,16 +25,9 @@ export class FormholidayrentalsComponent implements OnInit {
   router: string;
 
   constructor(
-    public dialog: MatDialog,
     private _router: Router,
   ) {
     this.router = _router.url;
-  }
-
-  openDialog() {
-    this.dialog.open(FilterPopupComponent, {
-      width: '800px',
-    });
   }
 
   Locations: Location[] = [

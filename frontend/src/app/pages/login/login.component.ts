@@ -18,8 +18,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
+ 
 
-constructor(private service : MyService, private formBuilder: FormBuilder,private router : Router){
+
+constructor(public service : MyService, private formBuilder: FormBuilder,private router : Router){
 }
 createForm() {
   this.formGroup = this.formBuilder.group({
@@ -30,12 +32,27 @@ createForm() {
 
   ngOnInit(): void {
     this.createForm()
+  
   }
 
-  login(){
-    this.service.loginForm(this.formGroup.value)
-    this.formGroup.reset()
-    this.router.navigate(['/'])
+  login(formGroup){
+  if(this.formGroup.valid)
+    this.service.loginForm(this.formGroup.value).subscribe((res:any)=>{
+      localStorage.setItem('email', res.email)
+      localStorage.setItem('access_token', res.token)
+      localStorage.setItem('id', res.id)
+      localStorage.setItem('ref', 'Consumer')
+      
+      this.formGroup.reset()
+    
+     
+    this.router.navigate(['/']) 
+      //window.location.reload();
+     
+
+    })
+ 
+   
   }
 
 

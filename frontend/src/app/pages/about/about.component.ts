@@ -18,9 +18,6 @@ export class AboutComponent implements OnInit {
     this.bannerImage = '../../../assets/visu/about.webp'; 
     this.pageTitle = 'About'; 
     
-    this.service.getAbout().subscribe(data=>{
-      this.myData = data;
-     })
     }
 
   

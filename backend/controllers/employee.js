@@ -36,6 +36,21 @@ router.post('/api/e-register',function(req,res){
 
  })
 
+ router.get('/api/emp/:id', function (req, res){
+    console.log(req.params.id)
+    User.findById(req.params.id)
+        .then(result => {
+            res.send(result);
+            console.log('here is u r result',result)
+        }).catch(err => {
+            console.log('here is u r result err',err)
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving regs."
+            });
+        });
+ })
+
+
  router.post('/api/e-login', function(req,res){
     let token=req.cookies.auth;
     User.findByToken(token,(err,user)=>{

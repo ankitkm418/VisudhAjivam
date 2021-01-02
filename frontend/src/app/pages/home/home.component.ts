@@ -11,9 +11,6 @@ export class HomeComponent implements OnInit {
   myData:any;
   
  constructor(private service : MyService){
-  this.service.getHomepage().subscribe(data=>{
-    this.myData = data;
-   })
  }
 
   accommodations = [];

@@ -7,7 +7,7 @@ const db=require('./config/config').get(process.env.NODE_ENV);
 const authController = require('./controllers/authController')
 const businessController = require('./controllers/business')
 const empController = require('./controllers/employee')
-const admin = require('./controllers/admin')
+// const admin = require('./controllers/admin')
 
 const app = express();
 const cors = require('cors')
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(authController);
 app.use(businessController);
 app.use(empController);
-app.use(admin);
+// app.use(admin);
 
 // database connection
 mongoose.Promise=global.Promise;

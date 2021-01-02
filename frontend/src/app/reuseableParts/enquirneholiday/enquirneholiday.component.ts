@@ -12,7 +12,6 @@ myData;
   constructor(private service : MyService) { }
 
   ngOnInit(): void {
-    this.service.getEnquiry().subscribe(data =>this.myData = data)
   }
 
 }

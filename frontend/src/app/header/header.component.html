@@ -6,15 +6,14 @@
                   <div class="top-wrapper d-flex flex-wrap justify-content-between">
                       <ul class="nav left">
                           <li class="nav-item">
-                            <a mat-button class="nav-link" href="vishudhajivam@gmail.com" target="_blank"><i class="far fa-envelope"></i> <span> vishudhajivam@gmail.com</span></a>
+                            <a mat-button class="nav-link" href="www.vishudhajivam@gmail.com" target="_blank"><i class="far fa-envelope"></i> <span> vishudhajivam@gmail.com</span></a>
                           </li>
                           <li class="nav-item">
                             <a mat-button class="nav-link" href="+91-9304970109"><i class="fas fa-phone-alt"></i> <span>+91-9304970109</span></a>
                           </li>
                       </ul>
                       <ul class="nav right">
-                          <li class="nav-item d-none d-md-flex" *ngIf="!loginData">
-                            <!-- <a mat-button class="nav-link" routerLink="/login" ></a> -->
+                          <li class="nav-item d-none d-md-flex" *ngIf="!loggedIn">
                             <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-user" style="color: #3dacd5; "></i> Login <i class="fas fa-caret-down"></i></button>
                             <mat-menu #menu="matMenu">
                               <button mat-menu-item routerLink="/business-login">Business User</button>
@@ -24,8 +23,15 @@
                             </mat-menu>
                             
                         </li>
-                          <li class="nav-item" *ngIf="loginData">
-                            <a mat-button class="nav-link" (click)="logout()"> Logout {{loginData}}</a>
+                          <li class="nav-item" *ngIf="loggedIn">
+                            <!-- <a mat-button class="nav-link" (click)="logout()"> Logout {{loggedIn}}</a> -->
+                            <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-user" style="color: #3dacd5; "></i> <i class="fas fa-caret-down"></i></button>
+                            <mat-menu #menu="matMenu">
+                              <button mat-menu-item>My Profile</button>
+                              <button mat-menu-item routerLink="/unique-card"> My Unique Card</button>
+                              <button mat-menu-item>Change Password</button>
+                              <button mat-menu-item (click)="logout()">Logout</button>
+                            </mat-menu>
                           </li>
                       </ul>
                   </div>
@@ -52,42 +58,7 @@
                               <li class="nav-item">
                                 <a mat-button class="nav-link" [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleMobileMenu()" title="About">About</a>
                             </li>
-                              <!-- <li class="nav-item has-subMenu-items">
-                                  <a mat-button class="nav-link" [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleMobileMenu()" title="About">About</a>
-                                  <i class="fas fa-caret-down arrowDown-icon toggle-subMenu-mobile" (click)="toggleSubMenu1()"></i>
-                                  <ul class="sub-menu" [ngClass]="subMenu1 ? 'subMenu-on' : ''">
-                                      <li class="nav-item">
-                                          <a mat-button [routerLink]="['/testimonials']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link" (click)="toggleMobileMenu()" title="Testimonials">Testimonials</a>
-                                      </li>
-                                  </ul>
-                              </li> -->
-                              <!-- <li class="nav-item has-subMenu-items">
-                                  <a mat-button class="nav-link" [routerLink]="['/list-view']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleMobileMenu()" title="Holiday Rentals">Visit a Doctor</a>
-                                  <i class="fas fa-caret-down arrowDown-icon toggle-subMenu-mobile" (click)="toggleSubMenu2()"></i>
-                                  <ul class="sub-menu" [ngClass]="subMenu2 ? 'subMenu-on' : ''">
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Oak Beach, QLD">Oak Beach, QLD</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Gold Coast, QLD">Gold Coast, QLD</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Palm Cove, QLD">Palm Cove, QLD</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Port Douglas, QLD">Port Douglas, QLD</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Darwin, NT">Darwin, NT</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Sydney, NSW">Sydney, NSW</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button  class="nav-link" (click)="toggleMobileMenu()" title="Queenstown, OTA">Queenstown, OTA</a>
-                                    </li>
-                                  </ul>
-                              </li> -->
+                            
                               <li class="nav-item">
                                 <a mat-button class="nav-link" [routerLink]="['/visit-doctor']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="toggleMobileMenu()" title="Visit a Doctor">Visit a Doctor</a>
                             </li>
@@ -104,14 +75,6 @@
                                   <button mat-raised-button color="primary" class="nav-link mat-elevation-z" title="Contact Us" routerLink="/contact-us" (click)="toggleMobileMenu()">Contact Us</button>
                               </li>
                           </ul>
-                          <!-- <ul class="nav wishlist-trips d-none d-xl-flex">
-                              <li class="nav-item">
-                                <a mat-icon-button class="nav-link"><i class="fas fa-heart heart-icon"><p class="whishlist-count">2</p></i></a>
-                              </li>
-                              <li class="nav-item d-flex flex-wrap">
-                                <a mat-icon-button class="nav-link" (click)="openDialog()"><i class="fas fa-briefcase"></i></a>
-                              </li>
-                          </ul> -->
                       </div>
                   </nav>
               </div>
@@ -120,12 +83,6 @@
   </div>
   <div class="fixed-headerItems-mobileScreen d-xl-none">
       <ul class="nav wishlist-trips">
-          <li class="nav-item">
-              <a mat-button class="nav-link" (click)="openDialog()"><i class="fas fa-briefcase"></i><span>Become Our Partners</span></a>
-          </li>
-          <!-- <li class="nav-item">
-            <a mat-button class="nav-link"><i class="fas fa-heart heart-icon"><p class="whishlist-count">2</p></i><span>My Wishlist</span></a>
-          </li> -->
           <li class="nav-item">
               <a mat-button class="nav-link" routerLink="/login"><i class="fas fa-user"></i><span>My Account</span></a>
           </li>

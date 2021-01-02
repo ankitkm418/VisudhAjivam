@@ -1,3 +1,4 @@
+import { LoginComponent } from './auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -6,11 +7,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes =[
+  
+  {path : '' , redirectTo : '', pathMatch : 'full', component : LoginComponent },
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, {
     path: '',
     component: AdminLayoutComponent,
     children: [{

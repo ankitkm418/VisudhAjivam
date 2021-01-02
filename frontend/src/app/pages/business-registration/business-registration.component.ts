@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 
 import { MyService } from 'src/app/myService.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,7 @@ export class BusinessRegistrationComponent implements OnInit {
   message: string = 'Our team will get back to you';
 
   constructor(private service : MyService, 
-    private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
+    private formBuilder: FormBuilder, private snackBar: MatSnackBar, private router : Router) { }
 
  
   createForm() {
@@ -223,16 +224,15 @@ export class BusinessRegistrationComponent implements OnInit {
   this.pageTitle = 'contact us';   
    this.createForm();
 
-  this.service.getContact().subscribe(data => this.myData = data);
-  this.service.getContDetails().subscribe(data => this.myData1 = data)
   }
 
   onSubmit(){
-    this.service.postBusinessForm(this.formGroup.value).subscribe((data : object)=>{
-      this.snackBar.open('Thankyou for your details.', '', {
-        duration: 3000,
-      });    
-    });  
-    this.formGroup.reset()
+    if(this.formGroup.valid){
+      this.service.postBusinessForm(this.formGroup.value).subscribe(res=>console.log(res));  
+      this.formGroup.reset()
+      alert('Successfully Submitted')
+      this.router.navigate(['/business-login'])
+    }
+
   }
 }

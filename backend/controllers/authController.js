@@ -15,6 +15,7 @@ router.post('/api/register',function(req,res){
         if(user) return res.status(400).json({ auth : false, message :"email exits"});
  
         newuser.save((err,doc)=>{
+            console.log(doc)
             if(err) {console.log(err);
                 return res.status(400).json({ success : false});}
             res.status(200).json({
@@ -34,7 +35,20 @@ router.post('/api/register',function(req,res){
             message: err.message || "Some error occurred while retrieving regs."
         });
     });
+ })
 
+ router.get('/api/:id', function (req, res){
+    console.log(req.params.id)
+    User.findById(req.params.id)
+        .then(result => {
+            res.send(result);
+            console.log('here is u r result',result)
+        }).catch(err => {
+            console.log('here is u r result err',err)
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving regs."
+            });
+        });
  })
 
  router.post('/api/login', function(req,res){

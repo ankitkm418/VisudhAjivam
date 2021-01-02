@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 
 import { MyService } from 'src/app/myService.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,7 @@ export class ConsumerSignupComponent implements OnInit {
   message: string = 'Our team will get back to you';
 
   constructor(private service : MyService, 
-    private formBuilder: FormBuilder, private snackBar: MatSnackBar) { }
+    private formBuilder: FormBuilder, private snackBar: MatSnackBar, private router : Router) { }
 
  
   createForm() {
@@ -167,14 +168,14 @@ export class ConsumerSignupComponent implements OnInit {
   this.pageTitle = 'contact us';   
    this.createForm();
 
-  this.service.getContact().subscribe(data => this.myData = data);
-  this.service.getContDetails().subscribe(data => this.myData1 = data)
+
   }
 
   onSubmit(){
     if(this.formGroup.valid)
-    this.service.postConsumerForm(this.formGroup.value).subscribe((data : object)=>{
-     alert('Success')
-    });  
+    this.service.postConsumerForm(this.formGroup.value).subscribe(); 
+    alert('Successfully Submitted') 
+    this.formGroup.reset()
+    this.router.navigate(['/login'])
   }
 }
