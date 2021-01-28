@@ -9,7 +9,7 @@ import { MyService } from './myService.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
+import { HeaderCoponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,7 +32,7 @@ import { EnquirneholidayComponent } from './reuseableParts/enquirneholiday/enqui
 import { HolidayRentalsComponent } from './pages/holiday-rentals/holiday-rentals.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatSlderModule } from '@angular/material/slider';
 import { Ng5SliderModule } from 'ng5-slider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LoginComponent } from './pages/login/login.component';
@@ -45,7 +45,7 @@ import {UniqueCardComponent} from './header/card.component';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatSortModule} from '@angular/material/sort';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatnackBarModule} from '@angular/material/snack-bar';
 
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
